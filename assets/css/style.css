@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+body {
+    background: url(/assets/images/4338479.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#landing-area {
+    height: 135px;
+    width: 400px;
+    border-radius: 10px;  
+    background-color: rgba(98, 187, 167, .8);
+    text-align: center;
+}
+
+#heading {
+    border-top: 5px;
+}
