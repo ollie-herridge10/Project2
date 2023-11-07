@@ -1,3 +1,5 @@
+@import url('httpsL//fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,7 @@
 }
 
 body {
-    background: url(/assets/images/4338479.jpg) no-repeat center center;
+    background: url('assets/images/TT.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -20,8 +22,13 @@ body {
     border-radius: 10px;  
     background-color: rgba(98, 187, 167, .8);
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 #heading {
     border-top: 5px;
+}
+
+#play-btn {
+    
 }
