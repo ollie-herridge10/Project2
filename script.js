@@ -39,8 +39,6 @@ function drawNet() {
     }
 }
 
-drawCircle(30, 30, 15, "WHITE");
-
 // draw score text //
 
 function drawText(text,x,y,color) {
@@ -48,8 +46,6 @@ function drawText(text,x,y,color) {
     ctx.font = "50px fantasy";
     ctx.fillText(text,x,y);
 }
-
-drawText("something",300,200,"WHITE");
 
 // user paddle //
 
@@ -120,13 +116,13 @@ function render() {
 function collision(b,p) {
     b.top = b.y - b.radius;
     b.bottom = b.y + b.radius;
-    b.right - b.x + b.radius;
     b.left = b.x - b.radius;
+    b.right = b.x + b.radius;
 
     p.top = p.y;
     p.bottom = p.y + p.height;
-    p.right = p.x + p.width;
     p.left = p.x;
+    p.right = p.x + p.width;
 
     return b.right > p.left && b.bottom > p.top && b.left < p.right && b.top < p.bottom;
 }
@@ -139,6 +135,16 @@ function movePaddle(evt) {
     let rect = canvas.getBoundingClientRect();
 
     user.y = evt.clientY - rect.top - user.height/2;
+}
+
+// reset ball //
+
+function resetBall() {
+    ball.x = canvas.width/2;
+    ball.y = canvas.height/2;
+
+    ball.speed = 5;
+    ball.velocityX = -ball.velocityX;
 }
 
 // update the position, score, etc //
@@ -160,6 +166,39 @@ function update() {
 
     if(collision(ball,player)) {
 
+        // ball hits the player //
+
+        let collidePoint = ball.y - (player.y + player.height/2);
+
+        // normalisation //
+
+        collidePoint = collidePoint/(player.height/2);
+
+        // calculate angle in Radian //
+
+        let angleRad = collidePoint * Math.PI/4;
+
+        // X direction of the ball when it's hit //
+
+        let direction = (ball.x < canvas.width/2) ? 1 : -1;
+
+        // change velocity X and Y //
+
+        ball.velocityX = direction * ball.speed * Math.cos(angleRad);
+        ball.velocityY =             ball.speed * Math.sin(angleRad);
+
+        // everytime ball hits paddle, increase speed of ball //
+
+        ball.speed += 0.5;
+    }
+    // update score //
+
+    if(ball.x - ball.radius < 0) {
+        com.score++;
+        resetBall();
+    } else if(ball.x + ball.radius > canvas.width) {
+        user.score++;
+        resetBall();
     }
 }
 
