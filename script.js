@@ -31,6 +31,14 @@ function drawCircle(x,y,r,color) {
     ctx.fill();
 }
 
+//draw the net //
+
+function drawNet() {
+    for(let i = 0; i <= canvas.height; i += 15) {
+        drawRect(net.x, net.y + i, net.width, net.height, net.color);
+    }
+}
+
 drawCircle(30, 30, 15, "WHITE");
 
 // draw score text //
@@ -68,7 +76,7 @@ const com = {
 // create the net //
 
 const net = {
-    x: canvas.width - 1,
+    x: canvas.width/2 - 1,
     y: 0,
     width: 2,
     height: 10,
@@ -107,4 +115,62 @@ function render() {
     drawCircle(ball.x, ball.y, ball.radius, ball.color);
 }
 
+// ball and paddble collision //
+
+function collision(b,p) {
+    b.top = b.y - b.radius;
+    b.bottom = b.y + b.radius;
+    b.right - b.x + b.radius;
+    b.left = b.x - b.radius;
+
+    p.top = p.y;
+    p.bottom = p.y + p.height;
+    p.right = p.x + p.width;
+    p.left = p.x;
+
+    return b.right > p.left && b.bottom > p.top && b.left < p.right && b.top < p.bottom;
+}
+
+// controls for the user paddle //
+
+canvas.addEventListener("mousemove", movePaddle);
+
+function movePaddle(evt) {
+    let rect = canvas.getBoundingClientRect();
+
+    user.y = evt.clientY - rect.top - user.height/2;
+}
+
+// update the position, score, etc //
+
+function update() {
+    ball.x += ball.velocityX;
+    ball.y += ball.velocityY;
+
+// AI to control the computer paddle //
+
+    let computerLevel = 0.1;
+    com.y += (ball.y - (com.y + com.height/2)) * computerLevel;
+
+    if(ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
+        ball.velocityY = -ball.velocityY;
+    }
+
+    let player = (ball.x < canvas.width/2) ? user : com;
+
+    if(collision(ball,player)) {
+
+    }
+}
+
+// game init //
+
+function game() {
+    update();
+    render();
+}
+
+// loop //
+const framePerSecond = 50;
+setInterval(game,1000/framePerSecond);
 
