@@ -4,7 +4,7 @@ const canvas = document.getElementById("ping-pong");
 
 const ctx = canvas.getContext("2d");
 
-// draw rectangle for the canvas //
+// rectangle for the canvas //
 
 function drawRect(x,y,w,h,color) {
     ctx.fillStyle = color;
@@ -13,7 +13,7 @@ function drawRect(x,y,w,h,color) {
 
 drawRect(0, 0, canvas.width, canvas.height, "NAVY");
 
-// draw net on the table //
+// net on the table //
 
 function drawNet() {
     for(let i = 0; i <= canvas.height; i += 15) {
@@ -21,7 +21,7 @@ function drawNet() {
     }
 }
 
-// draw the ping pong ball //
+// the ping pong ball //
 
 function drawCircle(x,y,r,color) {
     ctx.fillStyle = color;
@@ -69,7 +69,7 @@ const com = {
     score: 0,
 }
 
-// create the net //
+// the net //
 
 const net = {
     x: canvas.width/2 - 1,
@@ -96,8 +96,8 @@ function render() {
     // clear the canvas //
     drawRect(0, 0, canvas.width, canvas.height, "NAVY");
 
-    // draw the net //
-    drawNet();
+    // draw ball //
+    drawCircle(ball.x, ball.y, ball.radius, ball.color);
 
     // draw score //
     drawText(user.score,canvas.width/4,canvas.height/5,"WHITE");
@@ -107,11 +107,11 @@ function render() {
     drawRect(user.x, user.y, user.width, user.height, user.color);
     drawRect(com.x, com.y, com.width, com.height, com.color);
 
-    // draw ball //
-    drawCircle(ball.x, ball.y, ball.radius, ball.color);
+    // draw the net //
+    drawNet();
 }
 
-// ball and paddble collision //
+// ball and paddle collision //
 
 function collision(b,p) {
     b.top = b.y - b.radius;
@@ -170,8 +170,6 @@ function update() {
 
         let collidePoint = ball.y - (player.y + player.height/2);
 
-        // normalisation //
-
         collidePoint = collidePoint/(player.height/2);
 
         // calculate angle in Radian //
@@ -191,6 +189,7 @@ function update() {
 
         ball.speed += 0.5;
     }
+    
     // update score //
 
     if(ball.x - ball.radius < 0) {
@@ -210,6 +209,7 @@ function game() {
 }
 
 // loop //
+
 const framePerSecond = 50;
 setInterval(game,1000/framePerSecond);
 

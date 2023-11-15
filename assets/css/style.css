@@ -25,6 +25,8 @@ body {
     margin-top: 55px;
 }
 
+/* button styling, button movement */
+
 .button-section {
     margin-bottom: 30px;
 }
@@ -48,6 +50,7 @@ body {
 .button:hover {
     transform: rotate(-2deg);
 }
+
 
 
 
