@@ -31,12 +31,39 @@ If either player misses the ball, the opposing player will gain a point. The pla
 # Features
 
 ## Landing Page
-The landing page is made up of a ping pong background, a title and a button that takes you through to the actual game itself.
+The landing page is made up of a ping pong background, a title and a button that takes you through to the actual game itself. This page is responsive.
+
+![Home Page Features](assets/images/WF-Home.png)
 
 ## Game 
-Using the HTML canvas, combined with many arguments involving division, multiplication and angles, you can play a game of ping pong against the computer. 
+Using the HTML canvas, combined with many arguments involving division, multiplication and angles, you can play a game of ping pong against the computer. This page is responsive.
+
+![Game Page Features](assets/images/WF-Game.png)
+
+
+# Technologies Used
+
+* JavaScript
+* HTML
+* CSS
 
 # Testing 
 
+I tested my HTML, CSS and JavaScript using online validators.
+* https://validator.w3.org/nu/#textarea
+* https://jigsaw.w3.org/css-validator/validator
+* https://jshint.com/
+
+
 # Accessibility 
 
+
+# Deployment
+The site was deployed using GitHub pages. The steps to deploy using GitHub pages are:
+
+1. Go to the repository on GitHub.com
+2. Select 'Settings' near the top of the page.
+3. Select 'Pages' from the menu bar on the left of the page.
+4. Under 'Source' select the 'Branch' dropdown menu and select the main branch.
+5. Once selected, click the 'Save'.
+6. Deployment should be confirmed by a message on a green background saying "Your site is published at" followed by the web address.

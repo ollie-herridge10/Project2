@@ -4,6 +4,50 @@ const canvas = document.getElementById("ping-pong");
 
 const ctx = canvas.getContext("2d");
 
+// user paddle //
+
+const user = {
+    x: 0,
+    y: canvas.height / 2 - 100/2,
+    height: 100,
+    width: 10,
+    color: "WHITE",
+    score: 0,
+};
+
+// computer paddle //
+
+const com = {
+    x: canvas.width - 10,
+    y: canvas.height / 2 - 100/2,
+    height: 100,
+    width: 10,
+    color: "WHITE",
+    score: 0,
+};
+
+// the net //
+
+const net = {
+    x: canvas.width/2 - 1,
+    y: 0,
+    width: 2,
+    height: 10,
+    color: "WHITE",
+};
+
+// the ping pong ball //
+
+const ball = {
+    x: canvas.width/2,
+    y: canvas.height/2,
+    radius: 10,
+    speed: 5,
+    velocityX: 5,
+    velocityY: 5,
+    color: "WHITE",
+};
+
 // rectangle for the canvas //
 
 function drawRect(x,y,w,h,color) {
@@ -13,15 +57,7 @@ function drawRect(x,y,w,h,color) {
 
 drawRect(0, 0, canvas.width, canvas.height, "NAVY");
 
-// net on the table //
-
-function drawNet() {
-    for(let i = 0; i <= canvas.height; i += 15) {
-        drawRect(net.x, net.y + i, net.width, net.height, net.color);
-    }
-}
-
-// the ping pong ball //
+// draw the ping pong ball //
 
 function drawCircle(x,y,r,color) {
     ctx.fillStyle = color;
@@ -47,49 +83,6 @@ function drawText(text,x,y,color) {
     ctx.fillText(text,x,y);
 }
 
-// user paddle //
-
-const user = {
-    x: 0,
-    y: canvas.height / 2 - 100/2,
-    height: 100,
-    width: 10,
-    color: "WHITE",
-    score: 0,
-}
-
-// computer paddle //
-
-const com = {
-    x: canvas.width - 10,
-    y: canvas.height / 2 - 100/2,
-    height: 100,
-    width: 10,
-    color: "WHITE",
-    score: 0,
-}
-
-// the net //
-
-const net = {
-    x: canvas.width/2 - 1,
-    y: 0,
-    width: 2,
-    height: 10,
-    color: "WHITE",
-}
-
-// the ping pong ball //
-
-const ball = {
-    x: canvas.width/2,
-    y: canvas.height/2,
-    radius: 10,
-    speed: 5,
-    velocityX: 5,
-    velocityY: 5,
-    color: "WHITE",
-}
 
 
 function render() {
