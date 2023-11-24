@@ -56,6 +56,11 @@ I tested my HTML, CSS and JavaScript using online validators.
 
 
 # Accessibility 
+Mobile Lighthouse Score
+![Desktop Lighthouse](assets/images/Lighthouse-Performance.png)
+
+Desktop Lighthouse Score
+![Desktop Lighthouse](assets/images/Lighthouse-Performance-Desktop.png)
 
 
 # Deployment
