@@ -54,6 +54,11 @@ I tested my HTML, CSS and JavaScript using online validators.
 * https://jigsaw.w3.org/css-validator/validator
 * https://jshint.com/
 
+Things I would improve if I had more time would include:
+* Rounds of Table Tennis
+* Stopping the ball lagging when it gets too fast
+* Add a leaderboard section
+
 
 # Accessibility 
 Mobile Lighthouse Score
