@@ -7,7 +7,7 @@
 }
 
 body {
-    background: url('/assets/images/Ping-Pong-Image.png') no-repeat center;
+    background: url('../images/Ping-Pong-Image.png') no-repeat center;
     background-size: cover;
     display: flex;
     justify-content: center;

@@ -2,6 +2,7 @@
 
 This is Ping Pong game made out of mainly JavaScript with elements of HTML and CSS. The aim of the game is to bounce the ball off of the left paddle which the user controls and try to get the ball past the right paddle which the computer controls. 
 
+
 # Site Goals
 
 The aim is to use the left ping pong paddle to score a higher points than the computer operated paddle on the right hand side. 
@@ -28,14 +29,15 @@ If either player misses the ball, the opposing player will gain a point. The pla
 ![Mobile Wireframe](assets/images/PhoneGame-WireFrame.png)
  </details>
 
+
 # Features
 
-## Landing Page
+### Landing Page
 The landing page is made up of a ping pong background, a title and a button that takes you through to the actual game itself. This page is responsive.
 
 ![Home Page Features](assets/images/WF-Home.png)
 
-## Game 
+### Game 
 Using the HTML canvas, combined with many arguments involving division, multiplication and angles, you can play a game of ping pong against the computer. This page is responsive.
 
 ![Game Page Features](assets/images/WF-Game.png)
@@ -46,6 +48,7 @@ Using the HTML canvas, combined with many arguments involving division, multipli
 * JavaScript
 * HTML
 * CSS
+
 
 # Testing 
 
@@ -61,6 +64,7 @@ Things I would improve if I had more time would include:
 
 
 # Accessibility 
+
 Mobile Lighthouse Score
 ![Desktop Lighthouse](assets/images/Lighthouse-Performance.png)
 
@@ -68,7 +72,15 @@ Desktop Lighthouse Score
 ![Desktop Lighthouse](assets/images/Lighthouse-Performance-Desktop.png)
 
 
+# Credits
+
+### Images
+Home Page Image - https://www.freepik.com/free-photos-vectors/table-tennis
+Game Page Image - https://www.pinterest.co.uk/pin/502362533405665639/
+
+
 # Deployment
+
 The site was deployed using GitHub pages. The steps to deploy using GitHub pages are:
 
 1. Go to the repository on GitHub.com
