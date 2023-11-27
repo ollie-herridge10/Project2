@@ -2,6 +2,8 @@
 
 This is Ping Pong game made out of mainly JavaScript with elements of HTML and CSS. The aim of the game is to bounce the ball off of the left paddle which the user controls and try to get the ball past the right paddle which the computer controls. 
 
+Live Link: https://ollie-herridge10.github.io/Project2/
+
 
 # Site Goals
 
